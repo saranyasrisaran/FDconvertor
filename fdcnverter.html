@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="fdconverter.css">
+    <link rel="stylesheet" href="">
+    <title>Fd converter</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Fd convertor</h2>
+        <div class="inputdiv">
+            <input type="text" id="input" placeholder="tenure month">
+
+        </div>
+        <div>
+            <button type="submit" onclick="FdRate()">Calculate</button>
+        </div>
+        <div id="result">
+
+        </div>
+
+    </div>
+    <script>
+      function FdRate(){
+       const months= Number(document.getElementById("input").value)
+       let rate=0
+       if(months<3)
+          rate=5.8
+       else if(months>=3&&months<=6)
+          rate=6.5
+       else if(months>=7&&months<=9) 
+         rate=6.8
+       else
+        rate=7.65
+      let result=document.querySelector('#result')
+      result.innerHTML="Your interst rate is"+ rate+"%"
+    }
+    </script>
+       
+</body>
+</html>
